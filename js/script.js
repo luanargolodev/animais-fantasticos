@@ -1,26 +1,41 @@
-// Mostre no console cada parágrado do site
-const paragrafos = document.querySelectorAll("p");
-console.log(paragrafos);
+// Verifique a distância da primeira imagem
+// em relação ao topo da página
+const imagem = document.querySelector("img");
+const imagemTop = imagem.offsetTop;
+console.log(imagemTop);
 
-paragrafos.forEach((item) => {
-  console.log(item);
+// Retorne a soma da largura de todas as imagens
+function somaImagens() {
+  const imagens = document.querySelectorAll("img");
+  let soma = 0;
+  imagens.forEach((imagem) => {
+    soma += imagem.offsetWidth;
+  });
+  return console.log(`A soma da largura de todas as imagens é ${soma}.`);
+}
+
+window.onload = function () {
+  somaImagens();
+};
+
+// Verifique se os links da página possuem
+// o mínimo recomendado para telas utilizadas
+// com o dedo. (48px/48px de acordo com o google)
+const links = document.querySelectorAll("a");
+links.forEach((link) => {
+  const linkWidth = link.offsetWidth;
+  const linkHeight = link.offsetHeight;
+  if (linkWidth >= 48 && linkHeight >= 48) {
+    console.log("Possui boa acessibilidade.");
+  } else {
+    console.log("Não possui boa acessibilidade.");
+  }
 });
 
-// Mostre o texto dos parágrafos no console
-paragrafos.forEach((item) => {
-  console.log(item.innerText);
-});
-
-// Como corrigir os erros abaixo:
-const imgs = document.querySelectorAll("img");
-
-imgs.forEach((item, index) => {
-  console.log(item, index);
-});
-
-let i = 0;
-imgs.forEach(() => {
-  console.log(i++);
-});
-
-imgs.forEach(() => i++);
+// Se o browser for menor que 720px,
+// adicione a classe menu-mobile ao menu
+const browserSmall = window.matchMedia("(max-width: 720px)").matches;
+if (browserSmall) {
+  const menu = document.querySelector(".menu");
+  menu.classList.add("menu-mobile");
+}
