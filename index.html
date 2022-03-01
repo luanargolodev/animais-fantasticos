@@ -17,7 +17,7 @@
     </script>
   </head>
   <body>
-    <nav class="menu js-menu">
+    <nav class="menu" data-menu="suave">
       <ul>
         <li><a href="#animais">Animais</a></li>
         <li><a href="#faq">Faq</a></li>
@@ -26,9 +26,9 @@
       </ul>
     </nav>
 
-    <section id="animais" class="grid-section animais js-scroll">
+    <section id="animais" class="grid-section animais" data-anime="scroll">
       <h1 class="titulo">Animais Fantásticos</h1>
-      <ul class="animais-lista js-tabmenu">
+      <ul class="animais-lista" data-tab="menu">
         <li><img src="./imgs/imagem1.jpg" alt="Raposa" /></li>
         <li><img src="./imgs/imagem2.jpg" alt="Esquilo" /></li>
         <li><img src="./imgs/imagem3.jpg" alt="Urso" /></li>
@@ -36,8 +36,8 @@
         <li><img src="./imgs/imagem5.jpg" alt="Macaco" /></li>
         <li><img src="./imgs/imagem6.jpg" alt="Leão" /></li>
       </ul>
-      <div class="animais-descricao js-tabcontent">
-        <section>
+      <div class="animais-descricao" data-tab="content">
+        <section data-anime="show-right">
           <h2>Raposa</h2>
           <p>
             As raposas são animais mamíferos e onívoros pertencentes à família
@@ -59,7 +59,7 @@
           </p>
         </section>
 
-        <section>
+        <section data-anime="show-right">
           <h2>Esquilo</h2>
           <p>
             As raposas são animais mamíferos e onívoros pertencentes à família
@@ -81,7 +81,7 @@
           </p>
         </section>
 
-        <section>
+        <section data-anime="show-down">
           <h2>Urso</h2>
           <p>
             As raposas são animais mamíferos e onívoros pertencentes à família
@@ -103,7 +103,7 @@
           </p>
         </section>
 
-        <section>
+        <section data-anime="show-down">
           <h2>Lobo</h2>
           <p>
             As raposas são animais mamíferos e onívoros pertencentes à família
@@ -125,7 +125,7 @@
           </p>
         </section>
 
-        <section>
+        <section data-anime="show-right">
           <h2>Macaco</h2>
           <p>
             As raposas são animais mamíferos e onívoros pertencentes à família
@@ -147,7 +147,7 @@
           </p>
         </section>
 
-        <section>
+        <section data-anime="show-right">
           <h2>Leão</h2>
           <p>
             As raposas são animais mamíferos e onívoros pertencentes à família
@@ -171,9 +171,9 @@
       </div>
     </section>
 
-    <section id="faq" class="grid-section faq js-scroll">
+    <section id="faq" class="grid-section faq" data-anime="scroll">
       <h1 class="titulo">FAQ</h1>
-      <dl class="faq-lista js-accordion">
+      <dl class="faq-lista" data-anime="accordion">
         <dt>Qual a idade dos animais?</dt>
         <dd>
           As raposas são animais mamíferos e onívoros pertencentes à família
@@ -199,7 +199,7 @@
       </dl>
     </section>
 
-    <section id="contato" class="grid-section contato js-scroll">
+    <section id="contato" class="grid-section contato" data-anime="scroll">
       <h1 class="titulo">Contato</h1>
       <div class="mapa">
         <img src="./imgs/mapa.png" alt="Localização" />
@@ -214,6 +214,7 @@
     <footer class="copy">
       <p>Todos os direitos reservados.</p>
     </footer>
+    <script src="./js/animacoes.js"></script>
     <script src="./js/script.js"></script>
   </body>
 </html>
