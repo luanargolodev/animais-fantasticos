@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aula JS</title>
+</head>
+
+<body>
+  <style>
+    body {
+      background: red;
+    }
+
+    body.active {
+      background: blue;
+    }
+  </style>
+
+  <button class="iniciar">Iniciar</button>
+  <button class="pausar">Pausar</button>
+  <button class="reiniciar">Reiniciar</button>
+  <span class="tempo">0</span>
+
+  <script>
+    setInterval(() => {
+      document.body.classList.toggle('active')
+    }, 1000)
+
+    const iniciar = document.querySelector('.iniciar');
+    const pausar = document.querySelector('.pausar');
+    const reiniciar = document.querySelector('.reiniciar');
+    const tempo = document.querySelector('.tempo');
+
+    iniciar.addEventListener('click', iniciarTempo);
+    pausar.addEventListener('click', pausarTempo);
+    reiniciar.addEventListener('click', resetarTempo);
+
+    let cronometro = 0;
+    let timer;
+
+    function iniciarTempo() {
+      console.log('Iniciado!');
+      timer = setInterval(() => {
+        tempo.innerText = cronometro++;
+      }, 100);
+      iniciar.setAttribute('disabled', '');
+    }
+
+    function pausarTempo() {
+      console.log('Pausado!');
+      clearInterval(timer);
+      iniciar.removeAttribute('disabled');
+    }
+
+    function resetarTempo() {
+      cronometro = tempo.innerText = 0;
+    }
+  </script>
+</body>
+
+</html>
